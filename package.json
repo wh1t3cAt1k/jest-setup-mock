@@ -3,6 +3,8 @@
     "files": [
         "dist/**/*"
     ],
+    "main": "./dist/SetupMock.js",
+    "types": "./dist/SetupMock.d.ts",
     "peerDependencies": {
         "jest": ">= 24"
     },
