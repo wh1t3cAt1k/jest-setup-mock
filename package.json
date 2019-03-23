@@ -1,0 +1,6 @@
+{
+    "name": "jest-setup-mock",
+    "peerDependencies": {
+        "jest": ">= 24"
+    }
+}
