@@ -1,11 +1,10 @@
 {
     "compilerOptions": {
-        "target": "es2015",
-        "module": "es2015",
-        "jsx": "react",
-        "outDir": "dist",
-        "rootDir": "src",
+        "target": "es5",
+        "module": "commonjs",
+        "outDir": "./dist",
         "strict": true,
+        "declaration": true,
         "noImplicitAny": true,
         "strictNullChecks": true,
         "strictFunctionTypes": true,
@@ -22,6 +21,8 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
-    }
+        "emitDecoratorMetadata": true,
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
 }
