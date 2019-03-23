@@ -1,6 +1,8 @@
 {
     "name": "jest-setup-mock",
-    "files": ["dist/**/*"],
+    "files": [
+        "dist/**/*"
+    ],
     "peerDependencies": {
         "jest": ">= 24"
     },
@@ -25,5 +27,6 @@
     },
     "dependencies": {
         "lodash": "^4.17.11"
-    }
+    },
+    "version": "0.1.0"
 }
