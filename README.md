@@ -1,6 +1,6 @@
 # jest-setup-mock
 
-Return / resolve values only if the arguments match the provided values. Full TypeScript type safety.
+Return / resolve values while simultaneously testing expected arguments. Full TypeScript type safety.
 
 # Rationale
 
