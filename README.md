@@ -6,21 +6,24 @@ Return / resolve values only if the arguments match the provided values. Full Ty
 
 Have you ever wanted to setup a Jest mock to return a value **only** when it received the correct arguments? 
 
-Sure, you could've accessed `mockVariable.mock.calls` besides your original assert, but that just makes your test code bloated and noisy.
+Sure, you could access `mockVariable.mock.calls` and assert its contents besides your original assert, but to my taste that is a pretty low-level API that furthermore makes your test code bloated and noisy.
 
 With `jest-setup-mock`, you can set up the mock to return / resolve a value **only** when the arguments match the expected arguments that you specify:
 
 ```
-setupMock(mockVariable)
-    .expectArguments(expectedArg1, ..., expectedArgN)
-    .resolveValueOnce(true)
+let someFunction: (x: number, y: string) => boolean;
+let functionMock: FunctionMock<typeof someFunction>;
+
+setupMock(someFunction)
+    .expectArguments(42, 'is the answer')
+    .resolveValueOnce(true);
 ```
 
-The code above will result in the mock resolving `true` whenever it is called with arguments matching `[expectedArg1, ..., expectedArgN]`, and throwing a descriptive error otherwise.
+The code above will result in the mock resolving `true` whenever it is called with two arguments matching `[42, 'is the answer']`, and throwing a descriptive error otherwise.
 
-Furthermore, if you type your mock variable as `FunctionMock<ActualFunctionType>`, the types of arguments and return values in the above fluent syntax will be inferred correctly, guarding you from type mistakes.
+Furthermore, by typing your mock variable as `FunctionMock<ActualFunctionType>`, the types of arguments and return values in the above fluent syntax will be inferred correctly, guarding you from type mistakes.
 
-For reference, `lodash`'s [`isEqual`|https://lodash.com/docs/4.17.11#isEqual] method is used to check for expected / actual argument equality.
+For reference, `lodash`'s [`isEqual`](https://lodash.com/docs/4.17.11#isEqual) method is used to check for expected / actual argument equality, so deep object / array equality comparison will work.
 
 # Contributing
 
