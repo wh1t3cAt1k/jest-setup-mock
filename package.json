@@ -2,5 +2,8 @@
     "name": "jest-setup-mock",
     "peerDependencies": {
         "jest": ">= 24"
+    },
+    "devDependencies": {
+        "typescript": "^3.3.4000"
     }
 }
