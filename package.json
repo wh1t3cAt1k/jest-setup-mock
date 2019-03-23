@@ -6,7 +6,8 @@
     "main": "./dist/SetupMock.js",
     "types": "./dist/SetupMock.d.ts",
     "peerDependencies": {
-        "jest": ">= 24"
+        "jest": ">= 24",
+        "@types/jest": ">= 24"
     },
     "scripts": {
         "build": "tsc"
