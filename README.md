@@ -11,7 +11,7 @@ Sure, you could access `mockVariable.mock.calls` and assert its contents besides
 With `jest-setup-mock`, you can set up the mock to return / resolve a value **only** when the arguments match the expected arguments that you specify:
 
 ```
-let someFunction: (x: number, y: string) => boolean;
+let someFunction: (x: number, y: string) => Promise<boolean>;
 let functionMock: FunctionMock<typeof someFunction>;
 
 setupMock(someFunction)
